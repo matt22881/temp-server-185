@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const PORT = process.env.PORT || 5000
 
 const app = express()
 app.use(express.json())
@@ -15,5 +16,4 @@ function getData(req, res) {
 
 app.get('/*', getData)
 
-app.listen(5000, () => console.log(
-  'The makeshift API is listening on port 5000!',))
+app.listen(PORT, () => console.log(`The makeshift API is listening on port ${PORT}!`,))
